@@ -59,15 +59,3 @@ This repository contains various projects related to credit cards, covering data
     4.  Integrate real-time models for instant decision support or alerts.
 
 ---
-
-## 5. AI in Banking: Federated Learning for Privacy
-
-* **Problem Statement:** Banks possess vast amounts of sensitive customer data, but privacy regulations and competitive concerns often prevent them from sharing raw data for collaborative AI model training.
-* **Why Needed:** To leverage the collective intelligence of distributed datasets for more robust AI models (e.g., better fraud detection across institutions) without compromising customer privacy.
-* **How it Helps Business Decision-Making:** Facilitates collaborative AI development (e.g., shared fraud intelligence without sharing raw data), enhances model accuracy by learning from diverse data sources, and ensures compliance with stringent data privacy regulations (e.g., GDPR), fostering trust and innovation.
-
-    **Steps:**
-    1.  Understand Federated Learning principles (local training, shared model updates).
-    2.  Identify a cross-institutional use case (e.g., collaborative fraud detection).
-    3.  Simulate a distributed training environment without central data sharing.
-    4.  Evaluate model improvements while maintaining data privacy.
