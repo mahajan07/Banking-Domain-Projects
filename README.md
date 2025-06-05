@@ -25,8 +25,8 @@ This repository contains various projects related to credit cards, covering data
 * **How it Helps Business Decision-Making:** Reduces financial losses due to fraud, enhances customer security and trust, lowers operational costs associated with fraud investigation, and protects the bank's reputation.
 
     **Steps:**
-    1.  Acquire labeled transaction data (fraudulent/legitimate).
-    2.  Train a machine learning model (e.g., Random Forest, XGBoost) to classify transactions.
+    1.  Acquire labeled transaction data (fraudulent/legitimate). 
+    2.  Train a machine learning model (e.g., Random Forest, XGBoost) to classify transactions. 
     3.  Evaluate model performance with fraud-specific metrics (Precision, Recall, F1-Score, AUC-ROC).
     4.  Implement system to flag suspicious transactions for review or blocking.
 
