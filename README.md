@@ -3,7 +3,7 @@
 This repository contains various projects related to credit cards, covering data analysis, machine learning, financial tools, and emerging AI concepts.
 
 ---
- 
+  
 ## 1. Customer Segmentation in Banking
 
 * **Problem Statement:** Banks struggle to understand the diverse needs and behaviors of their vast customer base, leading to generic marketing and service offerings.
