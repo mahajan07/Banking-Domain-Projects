@@ -31,7 +31,7 @@ This repository contains various projects related to credit cards, covering data
     4.  Implement system to flag suspicious transactions for review or blocking.
 
 ---
-
+ 
 ## 3. Credit Scoring Models
 
 * **Problem Statement:** Banks need to assess the creditworthiness of applicants accurately and consistently to minimize lending risk and ensure fair access to credit.
