@@ -39,8 +39,8 @@ Ensure you have Jupyter Notebook or a compatible environment (like Google Colab)
 📦 Dependencies
 This project uses the following core Python libraries:
 
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
+      * pandas
+      * numpy
+      * matplotlib
+      * seaborn
+      * scikit-learn
