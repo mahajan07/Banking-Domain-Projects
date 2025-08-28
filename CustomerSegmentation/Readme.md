@@ -17,11 +17,11 @@ Dataset: CC_GENERAL.csv - Contains transactional and behavioral data for approxi
 
 * Unsupervised Clustering: Three different clustering algorithms are compared to find the optimal segmentation:
 
-** K-Means
+* * K-Means
 
-** DBSCAN
+* DBSCAN
 
-** Gaussian Mixture Models (GMM)
+* Gaussian Mixture Models (GMM)
 
 * Model Validation: The Silhouette Score is used to quantitatively determine the best-performing clustering model.
 
