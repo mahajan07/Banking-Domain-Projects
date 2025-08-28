@@ -32,9 +32,9 @@ Dataset: CC_GENERAL.csv - Contains transactional and behavioral data for approxi
 ⚙️ How to Use
 Ensure you have Jupyter Notebook or a compatible environment (like Google Colab) installed.
 
-Place the CC_GENERAL.csv file in the same directory as the notebook.
+      * Place the CC_GENERAL.csv file in the same directory as the notebook.
 
-Run the cells in the Customer_Segmentation.ipynb notebook sequentially to reproduce the analysis.
+      * Run the cells in the Customer_Segmentation.ipynb notebook sequentially to reproduce the analysis.
 
 📦 Dependencies
 This project uses the following core Python libraries:
