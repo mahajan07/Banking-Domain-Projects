@@ -11,13 +11,13 @@ The primary goal is to partition a credit card customer base into meaningful, be
 Dataset: CC_GENERAL.csv - Contains transactional and behavioral data for approximately 9,000 credit card holders.
 
 🛠️ Key Analytical Steps
-Data Cleaning & EDA: The notebook starts with data loading, cleaning (imputing missing values), and a thorough exploratory data analysis to understand data distributions and correlations.
+* Data Cleaning & EDA: The notebook starts with data loading, cleaning (imputing missing values), and a thorough exploratory data analysis to understand data distributions and correlations.
 
 Feature Engineering: New, insightful features are created to better capture customer behavior, such as credit utilization and payment ratios.
 
 Unsupervised Clustering: Three different clustering algorithms are compared to find the optimal segmentation:
 
-K-Means
+  * K-Means
 
 DBSCAN
 
