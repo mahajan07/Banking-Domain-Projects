@@ -1,39 +1,29 @@
-# assume df_meta has columns: COLUMN_NAME, TERM_NAME, TERM_BUSINESS_DEFINITION
-# quick lookups (works even if df_meta isn't indexed)
-term_by_col = dict(zip(df_meta['COLUMN_NAME'], df_meta['TERM_NAME']))
-def_by_col  = dict(zip(df_meta['COLUMN_NAME'], df_meta['TERM_BUSINESS_DEFINITION']))
-
 output_lines = []
-for line in ddl_str.splitlines():
 
-    # only touch column lines
-    if ' as ' in line and ' with ' in line:
-        # ✅ get the alias (semantic column name) after "as"
-        m = re.search(r"\bas\s+([A-Za-z_][\w$]*)\s+with\b", line)
-        if not m:
-            output_lines.append(line)
-            continue
+for line in raw_string.splitlines():
+    if line.startswith('\t\t') and ' as ' in line and ' with ' in line:
+        # keep your existing attr if you need it elsewhere
+        # match = re.search(r'\b[\w]+(?:\.[\w]+)*\b', line); attr = match.group()
 
-        col = m.group(1)  # this is your COLUMN_NAME in df_meta
+        # ✅ NEW: grab the alias between "as" and "with"
+        m_alias = re.search(r"\bas\s+([A-Za-z_][\w$]*)\s+with\b", line)
+        if not m_alias:
+            output_lines.append(line); continue
 
-        # (you said business term replacement already works; keeping it simple)
-        if col in term_by_col:
-            business_term = term_by_col[col]
-            # replace alias with TERM_NAME
-            line = re.sub(r"(\bas\s+)[A-Za-z_][\w$]*(\s+with\b)",
-                          rf"\1{business_term}\2", line, count=1)
+        col = m_alias.group(1)  # this should match df.index (COLUMN_NAME without prefix)
 
-        # 🔁 replace comment='...' with TERM_BUSINESS_DEFINITION
-        if col in def_by_col:
-            business_def_sql = str(def_by_col[col]).replace("'", "''")
-            if 'comment' in line:
-                line = re.sub(
-                    r"(comment\s*=\s*)(['\"]).*?\2",
-                    lambda mm: f"{mm.group(1)}'{business_def_sql}'",
-                    line,
-                    count=1
-                )
+        if col in df.index:
+            # business_term = df.loc[col, 'TERM_NAME']  # if you also rename alias, keep this
+            business_deff = str(df.loc[col, 'TERM_BUSINESS_DEFINITION']).replace("'", "''")
+
+            # replace the comment text with business definition (first occurrence)
+            line = re.sub(
+                r"(comment\s*=\s*)(['\"]).*?\2",
+                lambda mm: f"{mm.group(1)}'{business_deff}'",
+                line,
+                count=1
+            )
 
     output_lines.append(line)
 
-updated_sql = "\n".join(output_lines)
+output_str = '\n'.join(output_lines)
