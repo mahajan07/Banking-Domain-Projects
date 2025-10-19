@@ -1,2 +1,2 @@
-Fraud Detections techniques
+Fraud Detections techniques 
  
